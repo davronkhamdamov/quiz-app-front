@@ -195,6 +195,7 @@
   font-size: 20px;
   font-family: "Courier New", Courier, monospace;
   transition: 0.4s;
+  cursor: pointer;
 }
 .login_withGoogle_btn {
   display: flex;

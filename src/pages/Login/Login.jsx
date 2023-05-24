@@ -3,8 +3,14 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import google from "../../assets/icon_google.svg";
+import { auth, googleAuth } from "../../firebase";
 
 const Login = () => {
+  const signInWithGoogle = () => {
+    auth.signInWithPopup(googleAuth).then((data) => {
+      window.location = "/";
+    });
+  };
   return (
     <div className="login_wrapper">
       <div className="login_wrapper_item_bg">
@@ -60,7 +66,11 @@ const Login = () => {
                 <div className="hr">
                   <p className="orText">or</p>
                 </div>
-                <button className="login_withGoogle_btn">
+                <button
+                  type="button"
+                  onClick={signInWithGoogle}
+                  className="login_withGoogle_btn"
+                >
                   <img src={google} alt="" />
                   Login with Google
                 </button>
