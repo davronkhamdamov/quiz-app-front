@@ -7,12 +7,14 @@
   font-family: "Poppins", sans-serif;
 }
 .login_wrapper_item {
-  width: 60%;
+  width: 100%;
+  max-width: 1200px;
   height: 100vh;
   padding: 50px 80px;
 }
 .login_wrapper_item_bg {
-  width: 40%;
+  width: 100%;
+  max-width: 750px;
   background: url("../../assets/Rectangle\ 29.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -87,7 +89,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px;
+  padding-top: 50px;
 }
 .login_form_wrapper h2 {
   font-size: 30px;
@@ -113,6 +115,11 @@
   display: flex;
   flex-direction: column;
 }
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .login_wrap h4 {
   font-weight: 400;
   font-size: 18px;
@@ -128,7 +135,7 @@
 }
 
 #user_email {
-  width: 426px;
+  width: 100%;
   height: 64px;
   padding: 20px;
   background: #000;
@@ -140,7 +147,7 @@
   border: none;
 }
 #user_password {
-  width: 426px;
+  width: 100%;
   height: 64px;
   padding: 20px;
   background: #000;
@@ -204,4 +211,41 @@
 .login_withGoogle_btn:active {
   background: #aaa;
   color: #000;
+}
+@media (max-width: 870px) {
+  .login_wrapper_item_bg {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .login_wrapper_item {
+    width: 100%;
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 410px) {
+  .login_wrap h4 {
+    font-size: 16px;
+  }
+  .login_wrapper_item {
+    padding: 10px 20px;
+  }
+  .login_form_wrapper {
+    padding-top: 20px;
+  }
+  .hr {
+    margin: 0;
+  }
+  .remember_btn {
+    height: 10px;
+  }
+  .login_wrap h2 {
+    font-size: 24px;
+  }
+  #user_email,
+  #user_password {
+    height: 50px;
+  }
 }
