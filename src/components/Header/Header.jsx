@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header>
       <NavLink className="logo" to="/">
-        Quiz app
+        Quiz Uz
       </NavLink>
       <nav>
         <NavLink className="profile" to="/profile">

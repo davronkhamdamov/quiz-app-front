@@ -1,0 +1,30 @@
+.input_wrapper {
+  width: 300px;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+}
+.next_quiz {
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.next_quiz:active {
+  transform: scale(0.9);
+}
+
+.quiz_wrapper {
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 90px;
+  display: flex;
+}
+.quiz_wrapper span {
+  font-size: 60px;
+}
+#birinchi,
+#ikkinchi,
+#uchinchi {
+  width: 25px;
+}
