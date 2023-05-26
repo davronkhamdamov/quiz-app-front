@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import google from "../../assets/icon_google.svg";
 import { auth, googleAuth } from "../../firebase";
@@ -8,8 +8,52 @@ import { auth, googleAuth } from "../../firebase";
 const Login = () => {
   const signInWithGoogle = () => {
     auth.signInWithPopup(googleAuth).then((data) => {
-      window.location = "/";
+      fetch(
+        `http://localhost:4000/auth/${
+          data.additionalUserInfo.isNewUser ? "register" : "login"
+        }`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            id: data.user.uid,
+            username: data.user.displayName,
+            email: data.user.email,
+            photo: data.user.photoURL,
+            isGoogleAuth: true,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+        .then((res) => res.json())
+        .then((data2) => {
+          if (data2.access_token) {
+            localStorage.setItem("authorization", data2.access_token);
+            window.location = "/quizes";
+          }
+        });
     });
+  };
+  const submitData = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:4000/auth/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: e.target.email.value,
+        password: e.target.password.value,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.access_token) {
+          localStorage.setItem("authorization", data.access_token);
+          window.location = "/quizes";
+        }
+      });
   };
   return (
     <div className="login_wrapper">
@@ -36,9 +80,10 @@ const Login = () => {
               <br />
               <div className="hr"></div>
               <br />
-              <form method="post" className="login_form">
+              <form className="login_form" onSubmit={submitData}>
                 <label htmlFor="user_email">Email address*</label>
                 <input
+                  name="email"
                   type="email"
                   required
                   id="user_email"
@@ -48,6 +93,7 @@ const Login = () => {
                 <div className="user_password_wrap">
                   <label htmlFor="user_password">Enter password*</label>
                   <input
+                    name="password"
                     type="password"
                     required
                     id="user_password"
