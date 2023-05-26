@@ -14,7 +14,7 @@ const Quizes = () => {
   const [allAnswers, setAllAnswers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/quizs/all", {
+    fetch(process.env.REACT_APP_BASE_URL + "/quizs/all", {
       method: "GET",
       headers: {
         token: localStorage.getItem("authorization"),

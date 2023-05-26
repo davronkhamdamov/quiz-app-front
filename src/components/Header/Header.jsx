@@ -10,7 +10,7 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
-    fetch("http://localhost:4000/auth/getProfileInformaton", {
+    fetch(process.env.REACT_APP_BASE_URL + "/auth/getProfileInformaton", {
       method: "GET",
       headers: {
         token: localStorage.getItem("authorization"),

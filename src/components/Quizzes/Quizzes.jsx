@@ -12,7 +12,7 @@ const Quizzes = () => {
   function submitData(e) {
     e.preventDefault();
     if (variant === 0) return toastify("warning", "Select the correct variant");
-    fetch("http://localhost:4000/quizs/create", {
+    fetch(process.env.REACT_APP_BASE_URL + "/quizs/create", {
       method: "POST",
       body: JSON.stringify({
         title: e.target.quiz_title.value,

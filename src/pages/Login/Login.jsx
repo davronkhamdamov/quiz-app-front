@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import google from "../../assets/icon_google.svg";
 import { auth, googleAuth } from "../../firebase";
@@ -9,9 +9,8 @@ const Login = () => {
   const signInWithGoogle = () => {
     auth.signInWithPopup(googleAuth).then((data) => {
       fetch(
-        `http://localhost:4000/auth/${
-          data.additionalUserInfo.isNewUser ? "register" : "login"
-        }`,
+        process.env.REACT_APP_BASE_URL +
+          `/auth/${data.additionalUserInfo.isNewUser ? "register" : "login"}`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -37,7 +36,7 @@ const Login = () => {
   };
   const submitData = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4000/auth/login", {
+    fetch(process.env.REACT_APP_BASE_URL + "/auth/login", {
       method: "POST",
       body: JSON.stringify({
         email: e.target.email.value,
