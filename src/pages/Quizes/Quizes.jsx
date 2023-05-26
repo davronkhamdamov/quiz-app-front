@@ -3,8 +3,8 @@ import "./Quizes.css";
 import { GrNext } from "react-icons/gr";
 import { AiOutlineCheck } from "react-icons/ai";
 import { VscDebugRestart } from "react-icons/vsc";
-import  applause from '../../assets/applause.gif';
-import  sad from '../../assets/sad-1.gif'
+import applause from "../../assets/applause.gif";
+import sad from "../../assets/sad-1.gif";
 
 const Quizes = () => {
   const [quizData, setQuizData] = useState([]);
@@ -28,15 +28,15 @@ const Quizes = () => {
         setQuizData(data);
       });
   }, []);
-  function getCorrectAnswers(){
-        return  allAnswers.filter((e, i) => {
-          return quizData[i].correct_variant === e;
-      }).length
+  function getCorrectAnswers() {
+    return allAnswers.filter((e, i) => quizData[i].correct_variant == e).length;
   }
   return (
     <div>
       <div className="quiz_wrapper">
-        <span className="text-primary">Question {quizNumber + 1}-{quizData.length}</span>
+        <span className="text-primary">
+          Question {quizNumber + 1}-{quizData.length}
+        </span>
       </div>
       {quizData[0] && (
         <div
@@ -106,12 +106,9 @@ const Quizes = () => {
             className="next_quiz"
             onClick={() => {
               if (![0, 1, 2, 3].includes(currentVariant)) {
-                return alert("iltimos birorta bir variant belgilang");
+                return alert("Iltimos birorta bir variant belgilang");
               }
-              setAllAnswers((prev) => [
-                ...prev,
-                quizData[quizNumber][`variant_${currentVariant + 1}`],
-              ]);
+              setAllAnswers((prev) => [...prev, currentVariant + 1]);
               setCurrentVariant(null);
               if (quizData?.length === quizNumber + 1) {
                 setModal(true);
@@ -136,9 +133,15 @@ const Quizes = () => {
       )}
       {modal && (
         <div className="modal_wrapper">
-            <img src={getCorrectAnswers() === 0 ? sad : applause} alt="" style={{width:"300px"}}/>
-            <br/>
-            <h4>You got {getCorrectAnswers()} out of  {quizData.length} correct</h4>
+          <img
+            src={getCorrectAnswers() === 0 ? sad : applause}
+            alt=""
+            style={{ width: "300px" }}
+          />
+          <br />
+          <h4>
+            You got {getCorrectAnswers()} out of {quizData.length} correct
+          </h4>
           <br />
           <button
             className="resetButtom"
