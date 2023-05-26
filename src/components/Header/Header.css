@@ -4,7 +4,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background: #000;
-  height: 80px;
+  height: 8.8dvh;
   padding: 0 40px;
 }
 
@@ -17,19 +17,19 @@ header {
 }
 @keyframes opacity {
   0% {
-    text-shadow: 0 0 11px #fff, 0 0 22px #0fa, 0 0 82px #0fa, 0 0 92px #0fa,
-      0 0 12px #0fa, 0 0 100px #0fa, 0 0 90px #fff, 0 0 90px #fff;
+    text-shadow: 0 0 11px #fff, 0 0 22px #6464ff, 0 0 82px #6464ff, 0 0 92px #6464ff,
+      0 0 12px #6464ff, 0 0 100px #6464ff, 0 0 90px #fff, 0 0 90px #fff;
   }
   100% {
-    text-shadow: 0 0 9px #fff, 0 0 10px #fff, 0 0 1px #fff, 0 0 2px #0fa,
-      0 0 8px #0fa, 0 0 20px #0fa, 0 0 12px #0fa, 0 0 11px #0fa;
+    text-shadow: 0 0 9px #fff, 0 0 10px #fff, 0 0 1px #fff, 0 0 2px #6464ff,
+      0 0 8px #6464ff, 0 0 20px #6464ff, 0 0 12px #6464ff, 0 0 11px #6464ff;
   }
 }
 .profile {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #ff6347;
+  background: #6464ff;
   display: grid;
   place-content: center;
   text-decoration: none;
