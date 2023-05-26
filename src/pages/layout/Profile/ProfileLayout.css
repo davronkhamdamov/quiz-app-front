@@ -1,0 +1,71 @@
+.profile_wrapper {
+  width: 100%;
+  min-height: 91.2dvh;
+  display: flex;
+}
+.dashboard {
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.4s ease-in-out;
+  padding: 1rem 0 1rem 1rem;
+}
+.dashboard p {
+  display: none;
+}
+.dashboard svg {
+  font-size: 24px;
+}
+.dashboard.active {
+  width: 20%;
+}
+.dashboard.active p {
+  display: block;
+}
+
+.dashboard_btn {
+  width: 95%;
+  margin: 0 auto;
+  background: #222;
+  border-radius: 30px;
+  display: flex;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.dashboard_btn div {
+  width: 100%;
+  height: 70px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.dashboard_btn.active {
+  transform: scale(1.005);
+  background: #6464ff;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+}
+
+.dashboard_btn:hover {
+  transform: scale(1.005);
+  background: #6464ff;
+}
+.information {
+  width: 92%;
+  background: #222;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.dashboard_btn[type="button"] {
+  border: none;
+}
