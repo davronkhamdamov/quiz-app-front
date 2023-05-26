@@ -17,8 +17,9 @@ header {
 }
 @keyframes opacity {
   0% {
-    text-shadow: 0 0 11px #fff, 0 0 22px #6464ff, 0 0 82px #6464ff, 0 0 92px #6464ff,
-      0 0 12px #6464ff, 0 0 100px #6464ff, 0 0 90px #fff, 0 0 90px #fff;
+    text-shadow: 0 0 11px #fff, 0 0 22px #6464ff, 0 0 82px #6464ff,
+      0 0 92px #6464ff, 0 0 12px #6464ff, 0 0 100px #6464ff, 0 0 90px #fff,
+      0 0 90px #fff;
   }
   100% {
     text-shadow: 0 0 9px #fff, 0 0 10px #fff, 0 0 1px #fff, 0 0 2px #6464ff,
@@ -28,15 +29,26 @@ header {
 .profile {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
   background: #6464ff;
   display: grid;
   place-content: center;
   text-decoration: none;
   color: white;
+  border-radius: 50%;
+}
+.profile img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 50%;
 }
 .LoginBtn {
   color: #eee;
   font-size: 40px;
   text-decoration: none;
+}
+.quizesLink {
+  color: #eee;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 600;
 }
