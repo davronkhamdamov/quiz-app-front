@@ -117,7 +117,7 @@ const Quizes = () => {
               }
             }}
           >
-            {quizNumber + 1 === quizData.length ? (
+            {quizNumber !== quizData.length - 1 ? (
               <>
                 Next
                 <GrNext />
