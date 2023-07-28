@@ -18,13 +18,14 @@ const Header = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data.statusCode === 401) {
           dispatch(newItemAction([]));
         }
         dispatch(newItemAction(data));
       });
   }, []);
-  if (location.pathname === "/login") return;
+  if (["/login", "/register"].includes(location.pathname)) return;
   return (
     <header>
       <Link className="logo" to="/">
