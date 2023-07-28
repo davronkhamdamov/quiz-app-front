@@ -11,12 +11,14 @@ import Quizes from "./pages/Quizes/Quizes";
 import ProfileLayout from "./pages/layout/Profile/ProfileLayout";
 import Quizzes from "./components/Quizzes/Quizzes";
 import Results from "./components/Results/Results";
+import Register from "./pages/Register/Register";
 
 const rout = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="login" element={<Login />} />
+      <Route path="register" element={<Register />} />
       <Route path="quizes" element={<Quizes />} />
       <Route path="profile" element={<ProfileLayout />}>
         <Route path="information" element={<ProfileInformation />} />

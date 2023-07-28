@@ -120,6 +120,10 @@ const Login = () => {
                   Login with Google
                 </button>
               </form>
+              <div className="account_new">
+                <p>Don't have an account? </p>
+                <a href="/register">Sign up</a>
+              </div>
             </div>
           </div>
         </div>
