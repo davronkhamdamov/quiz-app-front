@@ -12,7 +12,12 @@ const ProfileInformation = () => {
           <label htmlFor="profile_input" className="profile_image_label">
             <MdAddAPhoto />
           </label>
-          <input type="file" style={{ display: "none" }} id="profile_input" />
+          <input
+            type="file"
+            style={{ display: "none" }}
+            id="profile_input"
+            accept="image/png, image/jpeg"
+          />
         </div>
       </div>
       <h2 style={{ textAlign: "center" }}>{getData?.data[0]?.username}</h2>
